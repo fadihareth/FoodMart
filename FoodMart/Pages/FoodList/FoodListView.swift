@@ -18,7 +18,7 @@ struct FoodListView: View {
     var body: some View {
         Group {
             if let error = viewModel.error {
-                ErrorView(errorMessage: error, action: viewModel.load)
+                ErrorView(errorMessage: error, action: viewModel.load, isLoading: viewModel.isLoading)
             } else {
                 VStack(spacing: 10) {
                     HStack(alignment: .bottom) {

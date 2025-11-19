@@ -10,6 +10,7 @@ import SwiftUI
 struct ErrorView: View {
     let errorMessage: String
     let action: () async -> Void
+    var isLoading: Bool
     
     var body: some View {
         VStack(spacing: 20) {
@@ -23,6 +24,7 @@ struct ErrorView: View {
                     await action()
                 }
             })
+            .disabled(isLoading)
         }
         .padding()
     }
